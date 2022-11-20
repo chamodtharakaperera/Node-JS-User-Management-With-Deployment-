@@ -1,0 +1,24 @@
+GET http://localhost:3000/subscribers
+
+###
+GET http://localhost:3000/subscribers/637a97fad3888a31239c0618
+
+###
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "name": "Nutsy Person",
+    "subscribedToChannel": "Web Dev Simplified"
+}
+
+###
+DELETE http://localhost:3000/subscribers/637a9754d3888a31239c0606
+
+###
+PATCH http://localhost:3000/subscribers/637a97fad3888a31239c0618
+Content-Type: application/json
+
+{
+    "name": "New Name"
+}
