@@ -2,8 +2,31 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 
 dotenv.config();
+
+// Start Of the Swagger Code
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Node JS API Project for MongoDB",
+      version: "1.0.0",
+    },
+    servers: [
+      {
+        url: "http://localhost:3000/",
+      },
+    ],
+  },
+  apis: ["./routes/subscribers.js"],
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// End Of the Swagger Code
 
 mongoose
   .connect(process.env.MONGO_URL, {

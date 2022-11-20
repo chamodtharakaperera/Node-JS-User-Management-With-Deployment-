@@ -18,7 +18,9 @@
   "homepage": "https://github.com/chamodtharakaperera/Node-JS-User-Management-With-Deployment-#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^6.7.2"
+    "mongoose": "^6.7.2",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
