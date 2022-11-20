@@ -2,7 +2,17 @@ const express = require("express");
 const router = express.Router();
 const Subscriber = require("../models/subscriber");
 
-// Getting all
+/**
+ * @swagger
+ * /subscribers:
+ *  get:
+ *    summary: This API is used to check if get method is working or not
+ *    description: This API is used to check if get method is working or not
+ *    responses:
+ *      200:
+ *          description: To Test Get Method
+ */
+// Get All
 router.get("/", async (req, res) => {
   try {
     const subscribers = await Subscriber.find();
@@ -12,6 +22,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+/**
+ * @swagger
+ * /subscribers/{id}:
+ *  get:
+ *    summary: This API is used to check if get method is working or not
+ *    description: This API is used to check if get method is working or not
+ *    responses:
+ *      200:
+ *          description: To Test Get Method
+ */
 // Getting One
 router.get("/:id", getSubscriber, (req, res) => {
   res.json(res.subscriber);
