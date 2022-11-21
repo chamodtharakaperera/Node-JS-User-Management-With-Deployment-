@@ -28,6 +28,8 @@ const swaggerSpec = swaggerJSDoc(options);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // End Of the Swagger Code
 
+const PORT = process.env.PORT || 3000;
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -40,4 +42,4 @@ app.use(express.json());
 const subscribersRouter = require("./routes/subscribers");
 app.use("/subscribers", subscribersRouter);
 
-app.listen(3000, () => console.log("Server Started"));
+app.listen(PORT, () => console.log(`Server Started On Port ${PORT}`));
